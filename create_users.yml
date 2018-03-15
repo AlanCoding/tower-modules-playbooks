@@ -6,6 +6,7 @@
 
   - pip:
       name: ansible-tower-cli
+      virtualenv: /venv/awx
 
   - name: Create a User
     tower_user:
