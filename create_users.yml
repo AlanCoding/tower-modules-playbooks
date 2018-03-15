@@ -4,10 +4,6 @@
   gather_facts: false
   tasks:
 
-  - pip:
-      name: ansible-tower-cli
-      virtualenv: /venv/awx
-
   - name: Create a User
     tower_user:
       first_name: Joe
@@ -16,6 +12,7 @@
       password: secret
       email: joe@example.org
       state: present
+      verify_ssl: false
 
   - name: Create an Auditor
     tower_user:
@@ -26,6 +23,7 @@
       email: joe@example.org
       state: present
       auditor: true
+      verify_ssl: false
 
   - name: Create a Superuser
     tower_user:
@@ -36,3 +34,4 @@
       email: joe@example.org
       state: present
       superuser: true
+      verify_ssl: false
