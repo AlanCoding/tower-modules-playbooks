@@ -4,6 +4,9 @@
   gather_facts: false
   tasks:
 
+  - pip:
+      name: ansible-tower-cli
+
   - name: Create a User
     tower_user:
       first_name: Joe
