@@ -1,20 +1,26 @@
-- name: Delete a User
-  tower_user:
-    username: joe
-    email: joe@example.org
-    state: absent
-  register: result
+---
 
-- name: Delete an Auditor
-  tower_user:
-    username: joe
-    email: joe@example.org
-    state: absent
-  register: result
+- hosts: all
+  gather_facts: false
+  tasks:
 
-- name: Delete a Superuser
-  tower_user:
-    username: joe
-    email: joe@example.org
-    state: absent
-  register: result
+  - name: Delete a User
+    tower_user:
+      username: joe
+      email: joe@example.org
+      state: absent
+    register: result
+
+  - name: Delete an Auditor
+    tower_user:
+      username: joe
+      email: joe@example.org
+      state: absent
+    register: result
+
+  - name: Delete a Superuser
+    tower_user:
+      username: joe
+      email: joe@example.org
+      state: absent
+    register: result
